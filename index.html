@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        margin-left: 5%;
+      }
+      .main > div {
+        /* margin: 5; */
+        /* flex: 1;
+        flex-basis: 33.3%; */
+        border-radius: 20px;
+        box-shadow: 0px 2px 10px #d0d3d9;
+        width: 30%;
+        height: 15vh;
+        padding-top: 2vh;
+        padding: 30px 20px;
+        /* position: relative; */
+      }
+      button {
+        width: 20%;
+        height: 20%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <div>
+        <div>티라미수</div>
+        <div id="m1">0</div>
+        <button id="btnM1">-</button>
+        <button id="btnP1">+</button>
+        <div id="r1">0</div>
+      </div>
+      <div>
+        <div>오레오</div>
+        <div id="m2">0</div>
+        <button id="btnM2">-</button>
+        <button id="btnP2">+</button>
+        <div id="r2">0</div>
+      </div>
+      <div>
+        <div>아메리카노</div>
+        <div id="m3">0</div>
+        <button id="btnM3">-</button>
+        <button id="btnP3">+</button>
+        <div id="r3">0</div>
+      </div>
+      <div>
+        <div>조리퐁라뗴</div>
+        <div id="m4">0</div>
+        <button id="btnM4">-</button>
+        <button id="btnP4">+</button>
+        <div id="r4">0</div>
+      </div>
+      <div>
+        <div>오곡라뗴</div>
+        <div id="m5">0</div>
+        <button id="btnM5">-</button>
+        <button id="btnP5">+</button>
+        <div id="r5">0</div>
+      </div>
+
+      <div>
+        <h3>총합</h3>
+        <div id="rr">0</div>
+      </div>
+      <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+    </div>
+  </body>
+</html>
+
+<script>
+  var tira = 0;
+  var oreo = 0;
+  var ame = 0;
+  var jori = 0;
+  var ogok = 0;
+
+  const btn_P1 = document.getElementById("btnP1");
+  const btn_M1 = document.getElementById("btnM1");
+  const btn_P2 = document.getElementById("btnP2");
+  const btn_M2 = document.getElementById("btnM2");
+  const btn_P3 = document.getElementById("btnP3");
+  const btn_M3 = document.getElementById("btnM3");
+  const btn_P4 = document.getElementById("btnP4");
+  const btn_M4 = document.getElementById("btnM4");
+  const btn_P5 = document.getElementById("btnP5");
+  const btn_M5 = document.getElementById("btnM5");
+
+  btn_P1.addEventListener("click", () => {
+    tira++;
+    document.getElementById("m1").textContent = tira;
+    document.getElementById("r1").textContent = tira * 3500;
+    document.getElementById("rr").textContent =
+      tira * 3500 + oreo * 3500 + ame * 2000 + jori * 3500 + ogok * 3000;
+  });
+
+  btn_M1.addEventListener("click", () => {
+    tira--;
+    document.getElementById("m1").textContent = tira;
+    document.getElementById("r1").textContent = tira * 3500;
+    document.getElementById("rr").textContent = 500;
+    document.getElementById("rr").textContent =
+      tira * 3500 + oreo * 3500 + ame * 2000 + jori * 3500 + ogok * 3000;
+  });
+
+  btn_P2.addEventListener("click", () => {
+    oreo++;
+    document.getElementById("m2").textContent = oreo;
+    document.getElementById("r2").textContent = oreo * 3500;
+    document.getElementById("rr").textContent =
+      tira * 3500 + oreo * 3500 + ame * 2000 + jori * 3500 + ogok * 3000;
+  });
+
+  btn_M2.addEventListener("click", () => {
+    oreo--;
+    document.getElementById("m2").textContent = oreo;
+    document.getElementById("r2").textContent = oreo * 3500;
+    document.getElementById("rr").textContent =
+      tira * 3500 + oreo * 3500 + ame * 2000 + jori * 3500 + ogok * 3000;
+  });
+  btn_P3.addEventListener("click", () => {
+    ame++;
+    document.getElementById("m3").textContent = ame;
+    document.getElementById("r3").textContent = ame * 2000;
+    document.getElementById("rr").textContent =
+      tira * 3500 + oreo * 3500 + ame * 2000 + jori * 3500 + ogok * 3000;
+  });
+
+  btn_M3.addEventListener("click", () => {
+    ame--;
+    document.getElementById("m3").textContent = ame;
+    document.getElementById("r3").textContent = ame * 2000;
+    document.getElementById("rr").textContent =
+      tira * 3500 + oreo * 3500 + ame * 2000 + jori * 3500 + ogok * 3000;
+  });
+  btn_P4.addEventListener("click", () => {
+    jori++;
+    document.getElementById("m4").textContent = jori;
+    document.getElementById("r4").textContent = jori * 3500;
+    document.getElementById("rr").textContent =
+      tira * 3500 + oreo * 3500 + ame * 2000 + jori * 3500 + ogok * 3000;
+  });
+
+  btn_M4.addEventListener("click", () => {
+    jori--;
+    document.getElementById("m4").textContent = jori;
+    document.getElementById("r4").textContent = jori * 3500;
+    document.getElementById("rr").textContent =
+      tira * 3500 + oreo * 3500 + ame * 2000 + jori * 3500 + ogok * 3000;
+  });
+  btn_P5.addEventListener("click", () => {
+    ogok++;
+    document.getElementById("m5").textContent = ogok;
+    document.getElementById("r5").textContent = ogok * 3000;
+    document.getElementById("rr").textContent =
+      tira * 3500 + oreo * 3500 + ame * 2000 + jori * 3500 + ogok * 3000;
+  });
+
+  btn_M5.addEventListener("click", () => {
+    ogok--;
+    document.getElementById("m5").textContent = ogok;
+    document.getElementById("r5").textContent = ogok * 3000;
+    document.getElementById("rr").textContent =
+      tira * 3500 + oreo * 3500 + ame * 2000 + jori * 3500 + ogok * 3000;
+  });
+</script>
